@@ -1,6 +1,5 @@
 use wasm_bindgen::prelude::*;
 use gloo::{events::EventListener};
-
 mod test;
 
 // run on load
