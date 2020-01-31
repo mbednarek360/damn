@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+  </head>
+  <body>
+
+    <!--element definitions-->
+    <h1 id="outp_header">Hello</h1>
+    <button id="main_button">Click</button>
+
+    <!--load wasm module-->
+    <script type="module">
+      import init, { setup } from './pkg/WASM.js';
+      async function run() {
+        await init();
+        await setup();
+      }
+      run();
+    </script>
+  </body>
+</html>
