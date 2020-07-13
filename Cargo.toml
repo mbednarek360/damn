@@ -1,5 +1,6 @@
 [package]
-name = "WASM"
+# Dimensional Adjacency of Multiple Nodes
+name = "damn"
 version = "0.1.0"
 authors = ["Michael Bednarek <mbednarek360@protonmail.com>"]
 edition = "2018"
@@ -22,7 +23,6 @@ features = [
   'Node',
   'Window'
 ]
-
 [[bin]]
-name = "WASM"
+name = "damn"
 path = "main.rs"
