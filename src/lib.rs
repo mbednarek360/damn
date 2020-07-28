@@ -1,6 +1,6 @@
 use wasm_bindgen::prelude::*;
 use gloo::{events::EventListener};
-mod test;
+mod damn;
 
 // run on load
 #[wasm_bindgen]
@@ -16,7 +16,7 @@ pub fn setup() {
 
     // attach button listener
     let button_listener: EventListener = EventListener::new(&main_button, "click", move |_event| {
-        outp_header.set_inner_html(&test::test_add(1, 2).to_string()[..]);
+        outp_header.set_inner_html(&damn::test_add(1, 2).to_string()[..]);
     });
     button_listener.forget();  
 }
