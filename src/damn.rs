@@ -13,7 +13,9 @@ pub const BoardSize: PosType = 3;
 pub enum ParameterError {
     IncorrectDimensionality,
     PositionOutOfBounds,
-    ValueOutOfBounds
+    ValueOutOfBounds,
+    AlreadyAssigned,
+    NotAssigned
 }
 
 // board abstraction
@@ -32,7 +34,7 @@ impl Board {
     pub fn check_adj(&self, init_pos: &Vec<PosType>) -> Result<bool, ParameterError> {
         let val: Option<&ValType> = self.get_val(init_pos);
         if self.get_val(init_pos).is_none() {
-            return Err(ParameterError::PositionOutOfBounds)
+            return Err(ParameterError::NotAssigned)
         }
 
         // iter through each dimension
@@ -54,7 +56,6 @@ impl Board {
                     return Ok(false)
                 }  
             } 
-
         }
 
         // all checks passed
@@ -94,6 +95,9 @@ impl Board {
                 return Err(ParameterError::PositionOutOfBounds)
             }
         } 
+        if self.get_val(pos).is_some() {
+            return Err(ParameterError::AlreadyAssigned)
+        }
         Ok(())
     }
 
