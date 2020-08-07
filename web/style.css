@@ -77,6 +77,8 @@ input[type="range"] {
 input::-moz-range-thumb {
     background-color: var(--nord2);
     cursor: pointer;
+    width: 18px;
+    height: 18px;
 }
 
 #title {
